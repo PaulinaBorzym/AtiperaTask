@@ -27,7 +27,7 @@ public class ApplicationController {
         this.mapper = mapper;
     }
 
-    @GetMapping("/repositories/{username}")
+    @GetMapping(value = "/repositories/{username}", produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE} )
     public ResponseEntity<Object> getRepositories(
             @PathVariable String username,
             @RequestHeader("Accept") String acceptHeader) {
